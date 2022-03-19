@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Los Portales</string>
+
+    <string name="boton">Ver menú</string>
     <string name="eslogan">If you are talking authentic Mexican food, than we speak your language.</string>
     <string name="menu">Menu</string>
 

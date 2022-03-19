@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/drawable/boton_redondo.xml" value="0.1" />
+        <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/layout/activity_productos.xml" value="0.1" />
       </map>
     </option>
   </component>
