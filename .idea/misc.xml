@@ -4,13 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/drawable/boton_redondo.xml" value="0.1" />
+        <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/layout/activity_categoria_view.xml" value="0.25" />
+        <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/layout/activity_categorias.xml" value="0.14221014492753623" />
         <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/layout/activity_menu_view.xml" value="0.1" />
+        <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/layout/activity_producto_view.xml" value="0.1" />
         <entry key="..\:/Users/ac26s/Documents/A3 Apps moviles/LosPortales/app/src/main/res/layout/activity_productos.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12952898550724637" />
-        <entry key="app/src/main/res/layout/activity_menu_view.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_producto_view.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/activity_productos.xml" value="0.2" />
       </map>
     </option>
   </component>
