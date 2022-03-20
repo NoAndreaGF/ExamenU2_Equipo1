@@ -3,6 +3,9 @@
 
     <string name="boton">Ver menú</string>
     <string name="eslogan">If you are talking authentic Mexican food, than we speak your language.</string>
+
+    <string name="vacio"> </string>
+
     <string name="menu">Menu</string>
 
     <string name="tacos">Tacos</string>

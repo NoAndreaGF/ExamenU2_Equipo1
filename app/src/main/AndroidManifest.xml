@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LosPortales">
         <activity
+            android:name=".Menu_view"
+            android:exported="false" />
+        <activity
             android:name=".ProductosActivity"
             android:exported="false" />
         <activity
