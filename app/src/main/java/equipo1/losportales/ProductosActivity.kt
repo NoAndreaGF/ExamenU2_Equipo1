@@ -1,6 +1,7 @@
 package equipo1.losportales
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -155,6 +156,17 @@ class ProductosActivity : AppCompatActivity() {
             nombre.setText(prod.nombre)
             desc.setText(prod.descripcion)
             precio.setText(prod.precio)
+
+            //Este hace qu se vaya a al producto view
+            imagen.setOnClickListener{
+                val intent:Intent = Intent(contexto, producto_view::class.java)
+                intent.putExtra("nombre", prod.nombre)
+                intent.putExtra("imagen",prod.imagen)
+                intent.putExtra("precio",prod.precio)
+                contexto!!.startActivity(intent)
+
+            }
+
             return vista
         }
 
