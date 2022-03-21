@@ -80,7 +80,6 @@ class ProductosActivity : AppCompatActivity() {
             }
             "Tortas" ->{
                 titulo = R.drawable.combinados
-                menu.add(Producto(R.string.vacio,R.drawable.tortaregular,R.string.tortas_desc,R.string.vacio))
                 menu.add(Producto(R.string.tortaRegular,R.drawable.tortaregular,R.string.tortaRegular_desc,R.string.tortaRegular_precio))
                 menu.add(Producto(R.string.tortaMilanesaResOPollo,R.drawable.torta,R.string.tortaMilanesaResOPollo_desc,R.string.tortaMilanesaResOPollo_precio))
                 menu.add(Producto(R.string.tortaCubana,R.drawable.tortacubana,R.string.tortaCubana_desc,R.string.tortaCubana_precio))
@@ -96,7 +95,7 @@ class ProductosActivity : AppCompatActivity() {
                 menu.add(Producto(R.string.sopaMariscos,R.drawable.sopamariscos,R.string.sopaMariscos_desc,R.string.sopaMariscos_precio))
                 menu.add(Producto(R.string.coctelCamaron,R.drawable.coctelcamaron,R.string.coctelCamaron_desc,R.string.coctelCamaron_precio))
             }
-            "Extras" ->{
+            "Side Orders" ->{
                 titulo = R.drawable.extras
                 menu.add(Producto(R.string.sideGuacamole,R.drawable.guacamole,R.string.vacio,R.string.sideGuacamole_precio))
                 menu.add(Producto(R.string.sideRice,R.drawable.arroz,R.string.vacio,R.string.sideRice_precio))
@@ -110,7 +109,7 @@ class ProductosActivity : AppCompatActivity() {
                 menu.add(Producto(R.string.jarritos,R.drawable.jarritos,R.string.vacio,R.string.jarritos_precio))
                 menu.add(Producto(R.string.aguasFrescas,R.drawable.aguasfrescas,R.string.vacio,R.string.aguasFrescas_precio))
                 menu.add(Producto(R.string.domesticBeer,R.drawable.cerveza,R.string.vacio,R.string.domesticBeer_precio))
-                menu.add(Producto(R.string.mexicanBeer,R.drawable.cervezamexicana,R.string.vacio,R.string.mexicanBeer))
+                menu.add(Producto(R.string.mexicanBeer,R.drawable.cervezamexicana,R.string.vacio,R.string.mexicanBeer_precio))
                 menu.add(Producto(R.string.micheladas,R.drawable.michelada,R.string.vacio,R.string.micheladas_precio))
                 menu.add(Producto(R.string.caguamas,R.drawable.caguama,R.string.vacio,R.string.caguamas_precio))
                 menu.add(Producto(R.string.caguamaMichelada,R.drawable.caguamamichelada,R.string.vacio,R.string.caguamaMichelada_precio))
@@ -118,9 +117,9 @@ class ProductosActivity : AppCompatActivity() {
                 menu.add(Producto(R.string.lataBeer,R.drawable.cervezalata,R.string.vacio,R.string.lataBeer_precio))
                 menu.add(Producto(R.string.charolazo,R.drawable.charolazo,R.string.vacio,R.string.charolazo_precio))
                 menu.add(Producto(R.string.charolazoCamarones,R.drawable.charolazocamarones,R.string.vacio,R.string.charolazoCamarones_precio))
-                menu.add(Producto(R.string.laMamalona,R.drawable.mamalona,R.string.vacio,R.string.laMamalona_precio))
+                menu.add(Producto(R.string.laMamalona,R.drawable.mamalona,R.string.laMamalona_desc,R.string.laMamalona_precio))
                 menu.add(Producto(R.string.laMamalonaCamarones,R.drawable.mamalonacamaron,R.string.vacio,R.string.laMamalonaCamarones_precio))
-                menu.add(Producto(R.string.cubetazo,R.drawable.cubetazoseis,R.string.vacio,R.string.cubetazo))
+                menu.add(Producto(R.string.cubetazo,R.drawable.cubetazoseis,R.string.vacio,R.string.cubetazo_precio))
             }
         }
     }
@@ -161,38 +160,39 @@ class ProductosActivity : AppCompatActivity() {
             desc.setText(prod.descripcion)
             precio.setText(prod.precio)
 
-            var queVariable = prod.imagen
+            var nom = prod.nombre
+            var pre = prod.precio
 
             //Este hace que se vaya a al producto view
             imagen.setOnClickListener{
                 val intent:Intent = Intent(contexto, producto_view::class.java)
-                intent.putExtra("nombre", prod.nombre)
-                intent.putExtra("imagen",prod.imagen)
-                intent.putExtra("precio",prod.precio)
+                intent.putExtra("nombre", contexto?.getString(nom))
+                intent.putExtra("imagen", prod.imagen)
+                intent.putExtra("precio", contexto?.getString(pre))
                 contexto!!.startActivity(intent)
 
             }
             nombre.setOnClickListener{
                 val intent:Intent = Intent(contexto, producto_view::class.java)
-                intent.putExtra("nombre", prod.nombre)
-                intent.putExtra("imagen",prod.imagen)
-                intent.putExtra("precio",prod.precio)
+                intent.putExtra("nombre", contexto?.getString(nom))
+                intent.putExtra("imagen", prod.imagen)
+                intent.putExtra("precio", contexto?.getString(pre))
                 contexto!!.startActivity(intent)
 
             }
             desc.setOnClickListener{
                 val intent:Intent = Intent(contexto, producto_view::class.java)
-                intent.putExtra("nombre", prod.nombre)
-                intent.putExtra("imagen",prod.imagen)
-                intent.putExtra("precio",prod.precio)
+                intent.putExtra("nombre", contexto?.getString(nom))
+                intent.putExtra("imagen", prod.imagen)
+                intent.putExtra("precio", contexto?.getString(pre))
                 contexto!!.startActivity(intent)
 
             }
             precio.setOnClickListener{
                 val intent:Intent = Intent(contexto, producto_view::class.java)
-                intent.putExtra("nombre", prod.nombre)
-                intent.putExtra("imagen",prod.imagen)
-                intent.putExtra("precio",prod.precio)
+                intent.putExtra("nombre", contexto?.getString(nom))
+                intent.putExtra("imagen", prod.imagen)
+                intent.putExtra("precio", contexto?.getString(pre))
                 contexto!!.startActivity(intent)
 
             }

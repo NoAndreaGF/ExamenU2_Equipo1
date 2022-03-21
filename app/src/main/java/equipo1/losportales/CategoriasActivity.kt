@@ -21,14 +21,15 @@ class CategoriasActivity : AppCompatActivity() {
     var nombreCategoria: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_categorias)
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+            super.onCreate(savedInstanceState)
+
+            supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+            setContentView(R.layout.activity_categorias)
+
         agregarCategorias()
 
         var listview: ListView = findViewById<ListView>(R.id.list_categoria) as ListView
         var adaptador: AdaptadorCategorias = AdaptadorCategorias(this, categorias)
-        print(listview)
 
         listview.adapter = adaptador
 

@@ -15,21 +15,24 @@ class producto_view : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_producto_view)
+
         val producto_nombre: TextView = findViewById(R.id.producto_nombre)
         val producto_precio: TextView = findViewById(R.id.producto_precio)
         val producto_img: ImageView = findViewById(R.id.producto_img)
         val producto_total: TextView = findViewById(R.id.producto_total)
 
+        val nomOpcion = intent.getStringExtra("nombre")
+        val preOpcion = intent.getStringExtra("precio")
+
+        if (nomOpcion != null && preOpcion != null) {
+            producto_nombre.setText(nomOpcion)
+            producto_precio.setText(preOpcion)
+        }
+
         val bundle = intent.extras
 
         if(bundle!=null)
         {
-            var queEs = bundle.getString("nombre")
-            if (queEs != null) {
-                Log.d("nombre de product view ", queEs)
-            }
-            producto_nombre.setText(bundle.getString("nombre"))
-            producto_precio.setText(bundle.getString("precio"))
             producto_img.setImageResource(bundle.getInt("imagen"))
             producto_total.setText(bundle.getString("precio"))
         }
