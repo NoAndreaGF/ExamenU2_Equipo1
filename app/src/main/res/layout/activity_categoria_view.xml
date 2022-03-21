@@ -23,6 +23,9 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
             android:text="@string/tacos" />
 
         <TextView

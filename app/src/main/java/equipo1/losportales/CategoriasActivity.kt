@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.ListView
@@ -22,8 +23,7 @@ class CategoriasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_categorias)
-
-        print("pito")
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         agregarCategorias()
 
         var listview: ListView = findViewById<ListView>(R.id.list_categoria) as ListView
