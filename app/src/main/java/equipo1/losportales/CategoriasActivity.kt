@@ -30,6 +30,34 @@ class CategoriasActivity : AppCompatActivity() {
                 var intent = Intent(this, ProductosActivity::class.java)
                 startActivity(intent)
             }
+            else if (position.equals(2)){
+                var intent = Intent(this, ProductosActivity::class.java)
+                startActivity(intent)
+            }
+            else if (position.equals(3)){
+                var intent = Intent(this, ProductosActivity::class.java)
+                startActivity(intent)
+            }
+            else if (position.equals(4)){
+                var intent = Intent(this, ProductosActivity::class.java)
+                startActivity(intent)
+            }
+            else if (position.equals(5)){
+                var intent = Intent(this, ProductosActivity::class.java)
+                startActivity(intent)
+            }
+            else if (position.equals(6)){
+                var intent = Intent(this, ProductosActivity::class.java)
+                startActivity(intent)
+            }
+            else if (position.equals(7)){
+                var intent = Intent(this, ProductosActivity::class.java)
+                startActivity(intent)
+            }
+            else if (position.equals(8)){
+                var intent = Intent(this, ProductosActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 

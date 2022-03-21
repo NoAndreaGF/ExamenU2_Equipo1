@@ -2,6 +2,7 @@ package equipo1.losportales
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -10,6 +11,7 @@ import android.widget.TextView
 class producto_view : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_producto_view)
         val producto_nombre: TextView = findViewById(R.id.producto_nombre)
         val producto_precio: TextView = findViewById(R.id.producto_precio)
