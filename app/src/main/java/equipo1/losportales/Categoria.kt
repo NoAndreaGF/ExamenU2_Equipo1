@@ -1,5 +1,5 @@
 package equipo1.losportales
 
-data class Categoria ( var nombre: Int,
+data class Categoria ( var nombre: String,
                        var imagen: Int,
-                       var descripcion: Int )
+                       var descripcion: String )
