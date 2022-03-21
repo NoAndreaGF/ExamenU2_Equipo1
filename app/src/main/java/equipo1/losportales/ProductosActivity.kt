@@ -23,9 +23,11 @@ class ProductosActivity : AppCompatActivity() {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_productos)
 
-        var menuOpcion: String? = intent.getStringExtra("menuType")
+        val menuOpcion = intent.getStringExtra("menuType")
 
-        agregarProductos(menuOpcion)
+        if(menuOpcion != null){
+            agregarProductos(menuOpcion)
+        }
 
         var imageView: ImageView = findViewById(R.id.imagen_titulo)
 
@@ -39,12 +41,12 @@ class ProductosActivity : AppCompatActivity() {
 
     fun agregarProductos(opcion: String?) {
         when(opcion) {
-            "tacos" ->{
+            "Tacos" ->{
                 titulo = R.drawable.tacos
                 menu.add(Producto(R.string.tacoT,R.drawable.tacotradicional,R.string.tacoT_desc,R.string.tacoT_precio))
                 menu.add(Producto(R.string.tacoP,R.drawable.tacopescado,R.string.tacoP_desc,R.string.tacoP_precio))
             }
-            "antojitos" ->{
+            "Antojitos" ->{
                 titulo = R.drawable.antojitos
                 menu.add(Producto(R.string.quesadilla,R.drawable.quesadillas,R.string.quesadilla_desc,R.string.quesadilla_precio))
                 menu.add(Producto(R.string.huaraches,R.drawable.huarache,R.string.huaraches_desc,R.string.huarache_precio))
@@ -53,7 +55,7 @@ class ProductosActivity : AppCompatActivity() {
                 menu.add(Producto(R.string.sopes,R.drawable.sopes,R.string.sopes_desc,R.string.sopes_precio))
                 menu.add(Producto(R.string.tostadas,R.drawable.tostadas,R.string.tostadas_desc,R.string.tostadas_precio))
             }
-            "especialidades" ->{
+            "Especialidades" ->{
                 titulo = R.drawable.especialidades
                 menu.add(Producto(R.string.mojarra,R.drawable.mojarrafrita,R.string.mojarra_desc,R.string.mojarra_precio))
                 menu.add(Producto(R.string.tostadasCev,R.drawable.tostadaceviche,R.string.tostadasCev_desc,R.string.tostadasCev_precio))
@@ -62,12 +64,12 @@ class ProductosActivity : AppCompatActivity() {
                 menu.add(Producto(R.string.botanaCamarones,R.drawable.botanacamarones,R.string.vacio,R.string.botanaCamarones_precio))
                 menu.add(Producto(R.string.coctelCamaron,R.drawable.coctelcamaron,R.string.vacio,R.string.coctelCamaron_precio))
             }
-            "caldos" ->{
+            "Caldos" ->{
                 titulo = R.drawable.caldos
                 menu.add(Producto(R.string.larger,R.drawable.caldopollo,R.string.vacio,R.string.larger_precio))
                 menu.add(Producto(R.string.camaron,R.drawable.camaron,R.string.vacio,R.string.camaron_precio))
             }
-            "combinados" ->{
+            "Combinaciones" ->{
                 titulo = R.drawable.combinados
                 menu.add(Producto(R.string.traditionalTacoCombo,R.drawable.tradicionaltacocombo,R.string.traditionalTacoCombo_desc,R.string.traditionalTacoCombo_precio))
                 menu.add(Producto(R.string.mexicanBurritos,R.drawable.burritosmexicanos,R.string.mexicanBurritos_desc,R.string.mexicanBurritos_precio))
@@ -76,7 +78,7 @@ class ProductosActivity : AppCompatActivity() {
                 menu.add(Producto(R.string.dosAmigos,R.drawable.dosamigos,R.string.dosAmigos_desc,R.string.dosAmigos_precio))
                 menu.add(Producto(R.string.burritoPepe,R.drawable.burritopepe,R.string.burritoPepe_desc,R.string.burritoPepe_precio))
             }
-            "tortas" ->{
+            "Tortas" ->{
                 titulo = R.drawable.combinados
                 menu.add(Producto(R.string.vacio,R.drawable.tortaregular,R.string.tortas_desc,R.string.vacio))
                 menu.add(Producto(R.string.tortaRegular,R.drawable.tortaregular,R.string.tortaRegular_desc,R.string.tortaRegular_precio))
@@ -85,7 +87,7 @@ class ProductosActivity : AppCompatActivity() {
                 menu.add(Producto(R.string.tortaMixta,R.drawable.tortamixta,R.string.tortaMixta_desc,R.string.tortaMixta_precio))
                 menu.add(Producto(R.string.smallMexicanTorta,R.drawable.tortachica,R.string.smallMexicanTorta_desc,R.string.smallMexicanTorta_precio))
             }
-            "sopas" ->{
+            "Sopas" ->{
                 titulo = R.drawable.sopas
                 menu.add(Producto(R.string.pozole,R.drawable.pozole,R.string.pozole_desc,R.string.pozole_precio))
                 menu.add(Producto(R.string.menudo,R.drawable.menudo,R.string.menudo_desc,R.string.menudo_precio))
@@ -94,7 +96,7 @@ class ProductosActivity : AppCompatActivity() {
                 menu.add(Producto(R.string.sopaMariscos,R.drawable.sopamariscos,R.string.sopaMariscos_desc,R.string.sopaMariscos_precio))
                 menu.add(Producto(R.string.coctelCamaron,R.drawable.coctelcamaron,R.string.coctelCamaron_desc,R.string.coctelCamaron_precio))
             }
-            "extras" ->{
+            "Extras" ->{
                 titulo = R.drawable.extras
                 menu.add(Producto(R.string.sideGuacamole,R.drawable.guacamole,R.string.vacio,R.string.sideGuacamole_precio))
                 menu.add(Producto(R.string.sideRice,R.drawable.arroz,R.string.vacio,R.string.sideRice_precio))
@@ -102,7 +104,7 @@ class ProductosActivity : AppCompatActivity() {
                 menu.add(Producto(R.string.chipsSalsa,R.drawable.salsaytostadas,R.string.vacio,R.string.chipsSalsa_precio))
                 menu.add(Producto(R.string.flourTacos,R.drawable.tortillas,R.string.vacio,R.string.flourTacos_precio))
             }
-            "bebidas" ->{
+            "Bebidas-Drinks" ->{
                 titulo = R.drawable.bebidas
                 menu.add(Producto(R.string.sodas,R.drawable.soda20oz,R.string.vacio,R.string.sodas_precio))
                 menu.add(Producto(R.string.jarritos,R.drawable.jarritos,R.string.vacio,R.string.jarritos_precio))
@@ -159,8 +161,34 @@ class ProductosActivity : AppCompatActivity() {
             desc.setText(prod.descripcion)
             precio.setText(prod.precio)
 
-            //Este hace qu se vaya a al producto view
+            var queVariable = prod.imagen
+
+            //Este hace que se vaya a al producto view
             imagen.setOnClickListener{
+                val intent:Intent = Intent(contexto, producto_view::class.java)
+                intent.putExtra("nombre", prod.nombre)
+                intent.putExtra("imagen",prod.imagen)
+                intent.putExtra("precio",prod.precio)
+                contexto!!.startActivity(intent)
+
+            }
+            nombre.setOnClickListener{
+                val intent:Intent = Intent(contexto, producto_view::class.java)
+                intent.putExtra("nombre", prod.nombre)
+                intent.putExtra("imagen",prod.imagen)
+                intent.putExtra("precio",prod.precio)
+                contexto!!.startActivity(intent)
+
+            }
+            desc.setOnClickListener{
+                val intent:Intent = Intent(contexto, producto_view::class.java)
+                intent.putExtra("nombre", prod.nombre)
+                intent.putExtra("imagen",prod.imagen)
+                intent.putExtra("precio",prod.precio)
+                contexto!!.startActivity(intent)
+
+            }
+            precio.setOnClickListener{
                 val intent:Intent = Intent(contexto, producto_view::class.java)
                 intent.putExtra("nombre", prod.nombre)
                 intent.putExtra("imagen",prod.imagen)

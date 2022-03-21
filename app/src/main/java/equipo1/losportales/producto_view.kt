@@ -2,6 +2,7 @@ package equipo1.losportales
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
@@ -9,6 +10,7 @@ import android.widget.TextView
 //aquí es donde se manipula al producto, se selecciona su ingrediente y
 //la cantidad de dicho producto
 class producto_view : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -22,6 +24,10 @@ class producto_view : AppCompatActivity() {
 
         if(bundle!=null)
         {
+            var queEs = bundle.getString("nombre")
+            if (queEs != null) {
+                Log.d("nombre de product view ", queEs)
+            }
             producto_nombre.setText(bundle.getString("nombre"))
             producto_precio.setText(bundle.getString("precio"))
             producto_img.setImageResource(bundle.getInt("imagen"))

@@ -4,89 +4,64 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
-import android.widget.*
+import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.ListView
+import android.widget.TextView
+import androidx.core.content.res.TypedArrayUtils
 
 class CategoriasActivity : AppCompatActivity() {
-    var categories = ArrayList<Categoria>()
+
+    var categorias: ArrayList<CategoriaMenu> = ArrayList<CategoriaMenu>()
+    var nombreCategoria: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
-
         setContentView(R.layout.activity_categorias)
-        addCategories()
-        var listView: ListView = findViewById(R.id.list_categoria) as ListView
-        var adapter: CategoriesAdapter = CategoriesAdapter(this, categories)
-        listView.adapter = adapter
 
-        listView.setOnItemClickListener { parent, view, position, id ->
-            if (position.equals(0)){
-                var intent = Intent(this, ProductosActivity::class.java)
-                startActivity(intent)
-            }else if (position.equals(1)){
-                var intent = Intent(this, ProductosActivity::class.java)
-                startActivity(intent)
-            }
-            else if (position.equals(2)){
-                var intent = Intent(this, ProductosActivity::class.java)
-                startActivity(intent)
-            }
-            else if (position.equals(3)){
-                var intent = Intent(this, ProductosActivity::class.java)
-                startActivity(intent)
-            }
-            else if (position.equals(4)){
-                var intent = Intent(this, ProductosActivity::class.java)
-                startActivity(intent)
-            }
-            else if (position.equals(5)){
-                var intent = Intent(this, ProductosActivity::class.java)
-                startActivity(intent)
-            }
-            else if (position.equals(6)){
-                var intent = Intent(this, ProductosActivity::class.java)
-                startActivity(intent)
-            }
-            else if (position.equals(7)){
-                var intent = Intent(this, ProductosActivity::class.java)
-                startActivity(intent)
-            }
-            else if (position.equals(8)){
-                var intent = Intent(this, ProductosActivity::class.java)
-                startActivity(intent)
-            }
-        }
+        print("pito")
+        agregarCategorias()
+
+        var listview: ListView = findViewById<ListView>(R.id.list_categoria) as ListView
+        var adaptador: AdaptadorCategorias = AdaptadorCategorias(this, categorias)
+        print(listview)
+
+        listview.adapter = adaptador
+
     }
 
-    fun addCategories(){
-        categories.add(Categoria(getString(R.string.tacos), R.drawable.tacoscategoria, getString(R.string.tacos_desc)))
-        categories.add(Categoria(getString(R.string.antojitos),  R.drawable.antojitoscategoria, getString(R.string.antojitos_desc)))
-        categories.add(Categoria(getString(R.string.bebidas),  R.drawable.bebidascategoria, getString(R.string.bebidas_desc)))
-        categories.add(Categoria(getString(R.string.especialidades),  R.drawable.especialidadescategoria, getString(R.string.especialidades_desc)))
-        categories.add(Categoria(getString(R.string.caldos),  R.drawable.caldoscategoria, getString(R.string.caldos_desc)))
-        categories.add(Categoria(getString(R.string.combinations),  R.drawable.combinadoscategoria, getString(R.string.combinations_desc)))
-        categories.add(Categoria(getString(R.string.tortas),  R.drawable.tortacategoria, getString(R.string.tortas_desc)))
-        categories.add(Categoria(getString(R.string.sopas),  R.drawable.sopascategoria, getString(R.string.sopas_desc)))
+    fun agregarCategorias() {
+        categorias.add(CategoriaMenu(R.string.tacos,R.drawable.tacoscategoria,R.string.vacio))
+        categorias.add(CategoriaMenu(R.string.antojitos,R.drawable.antojitoscategoria,R.string.vacio))
+        categorias.add(CategoriaMenu(R.string.especialidades,R.drawable.especialidadescategoria,R.string.vacio))
+        categorias.add(CategoriaMenu(R.string.caldos,R.drawable.caldoscategoria,R.string.vacio))
+        categorias.add(CategoriaMenu(R.string.combinations,R.drawable.combinadoscategoria,R.string.vacio))
+        categorias.add(CategoriaMenu(R.string.tortas,R.drawable.tortacategoria,R.string.tortas_desc))
+        categorias.add(CategoriaMenu(R.string.sopas,R.drawable.sopascategoria,R.string.vacio))
+        categorias.add(CategoriaMenu(R.string.sideOrders,R.drawable.extrascategoria,R.string.sideOrders_desc))
+        categorias.add(CategoriaMenu(R.string.bebidas,R.drawable.bebidascategoria,R.string.vacio))
     }
 
-    private class CategoriesAdapter: BaseAdapter {
-        var categories = ArrayList<Categoria>()
-        var context: Context?=null
+    private class AdaptadorCategorias: BaseAdapter {
 
-        constructor(context: Context, categories: ArrayList<Categoria>){
-            this.categories = categories
-            this.context = context
+        var categorias = ArrayList<CategoriaMenu>()
+        var contexto: Context?= null
+
+        constructor(contexto: Context, categorias: ArrayList<CategoriaMenu>) {
+            this.categorias = categorias
+            this.contexto = contexto
         }
 
         override fun getCount(): Int {
-            return categories.size
+            return categorias.size
         }
 
         override fun getItem(p0: Int): Any {
-            return categories[p0]
+            return categorias[p0]
         }
 
         override fun getItemId(p0: Int): Long {
@@ -94,18 +69,40 @@ class CategoriasActivity : AppCompatActivity() {
         }
 
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-            var cat = categories[p0]
-            var inflator = LayoutInflater.from(context)
-            var view = inflator.inflate(R.layout.activity_categoria_view, null)
+            var categ = categorias[p0]
+            var inflador = LayoutInflater.from(contexto)
+            var vista = inflador.inflate(R.layout.activity_categoria_view, null)
 
-            var image = view.findViewById(R.id.img_categoria) as ImageView
-            var name = view.findViewById(R.id.categoria_nombre) as TextView
-            var desc = view.findViewById(R.id.categoria_desc) as TextView
+            var imagen = vista.findViewById(R.id.img_categoria) as ImageView
+            var nombre = vista.findViewById(R.id.categoria_nombre) as TextView
+            var desc = vista.findViewById(R.id.categoria_desc) as TextView
 
-            image.setImageResource(cat.imagen)
-            name.setText(cat.nombre)
-            desc.setText(cat.descripcion)
-            return view
+            var nom = categ.nombre
+
+            imagen.setImageResource(categ.imagen)
+            nombre.setText(categ.nombre)
+            desc.setText(categ.descripcion)
+
+            // Este hace qu se vaya a al categoria view
+            imagen.setOnClickListener{
+                val intent: Intent = Intent(contexto, ProductosActivity::class.java)
+                intent.putExtra("menuType", contexto?.getString(nom))
+                contexto!!.startActivity(intent)
+            }
+            nombre.setOnClickListener{
+                val intent: Intent = Intent(contexto, ProductosActivity::class.java)
+                intent.putExtra("menuType", contexto?.getString(nom))
+                contexto!!.startActivity(intent)
+            }
+            desc.setOnClickListener{
+                val intent: Intent = Intent(contexto, ProductosActivity::class.java)
+                intent.putExtra("menuType", contexto?.getString(nom))
+                contexto!!.startActivity(intent)
+            }
+
+            return vista
         }
+
+
     }
 }
