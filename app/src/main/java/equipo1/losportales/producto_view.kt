@@ -1,5 +1,6 @@
 package equipo1.losportales
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -64,7 +65,8 @@ class producto_view : AppCompatActivity() {
 
         val btn_agregar: Button = findViewById(R.id.producto_agregar)
         btn_agregar.setOnClickListener{
-
+            var intent: Intent = Intent(this, PedidoActivity::class.java)
+            startActivity(intent)
         }
 
 
