@@ -32,8 +32,10 @@ class producto_view : AppCompatActivity() {
 
         val bundle = intent.extras
 
+        var imagen = 0
         if(bundle!=null)
         {
+            imagen = bundle.getInt("imagen")
             producto_img.setImageResource(bundle.getInt("imagen"))
             producto_total.setText(bundle.getString("precio"))
         }
@@ -42,33 +44,44 @@ class producto_view : AppCompatActivity() {
         val btn_menos: Button = findViewById(R.id.producto_cantidad_menos)
         val producto_cantidad: TextView = findViewById(R.id.producto_cantidad)
 
-        btn_mas.setOnClickListener{
-            var cantidadInt = Integer.parseInt(producto_cantidad.text.toString())
-            var precio = Integer.parseInt(producto_precio.text.toString())
+        var cantidadInt: Int
+        var cantidad: Float = 0.0f
+        var  total: Float = 0.0f
 
-            cantidadInt += 1
-            producto_cantidad.setText(cantidadInt.toString())
-            var  total= cantidadInt*precio
+        btn_mas.setOnClickListener{
+            cantidad = producto_cantidad.text.toString().toFloat()
+            var precio = producto_precio.text.toString().toFloat()
+
+            cantidad += 1
+            producto_cantidad.setText(cantidad.toInt().toString())
+            total= cantidad*precio
             producto_total.setText(total.toString())
         }
 
         btn_menos.setOnClickListener{
-            var cantidadInt = Integer.parseInt(producto_cantidad.text.toString())
-            var precio = Integer.parseInt(producto_precio.text.toString())
-            if(cantidadInt>1){
-                cantidadInt -= 1
-                producto_cantidad.setText(cantidadInt.toString())
-                var  total= cantidadInt*precio
+            cantidad = producto_cantidad.text.toString().toFloat()
+            var precio = producto_precio.text.toString().toFloat()
+            if(cantidad>1){
+                cantidad -= 1
+                producto_cantidad.setText(cantidad.toInt().toString())
+                total= cantidad*precio
                 producto_total.setText(total.toString())
             }
         }
 
+        cantidadInt = cantidad.toInt()
+
         val btn_agregar: Button = findViewById(R.id.producto_agregar)
+
         btn_agregar.setOnClickListener{
             var intent: Intent = Intent(this, PedidoActivity::class.java)
+            intent.putExtra("nombre", nomOpcion)
+            intent.putExtra("precio", total)
+            intent.putExtra("imagen", imagen)
+            intent.putExtra("cantidad", cantidadInt)
+
             startActivity(intent)
         }
-
 
     }
 }

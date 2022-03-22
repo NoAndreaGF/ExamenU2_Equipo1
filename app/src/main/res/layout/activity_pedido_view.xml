@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignBottom="@+id/categoryImage"
-        android:background="@drawable/boton_redondo"
+        android:background="@drawable/redondea"
         android:backgroundTint="@color/white"
         >
 
@@ -58,7 +58,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/pedido_desc"
+                android:id="@+id/pedido_cantidad"
                 android:layout_width="210dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="96dp"

@@ -24,15 +24,18 @@
             android:textSize="20sp"
             android:gravity="bottom"
             android:layout_marginLeft="10dp"
+            android:textStyle="bold"
             android:fontFamily="sans-serif"
             android:textColor="@color/black"
             android:text="@string/tacos" />
 
-        <TextView
-            android:id="@+id/categoria_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/vacio" />
+        @<TextView
+        android:id="@+id/categoria_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="10dp"
+        android:text="@string/vacio" />
 
     </LinearLayout>
 

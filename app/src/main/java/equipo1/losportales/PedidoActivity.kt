@@ -14,13 +14,25 @@ import android.widget.TextView
 
 class PedidoActivity : AppCompatActivity() {
 
-    private var productos = ArrayList<Producto>()
+    var productos = ArrayList<ProductoPedido>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_pedido)
 
+        val nomOpcion = intent.getStringExtra("nombre")
+        val preOpcion = intent.getStringExtra("precio")
+        val canOpcion = intent.getStringExtra("cantidad")
+
+        val bundle = intent.extras
+
+        var imagen = 0
+        if(bundle != null) {
+            imagen = bundle.getInt("imagen")
+        }
+
+        agregarPedido(nomOpcion, imagen, preOpcion, canOpcion)
 
         val adapter = adaptadorPedido(this, productos)
         val listview: ListView = findViewById(R.id.list_pedidos)
@@ -28,11 +40,15 @@ class PedidoActivity : AppCompatActivity() {
 
     }
 
+    fun agregarPedido(nomOpcion: String?, imagen: Int, preOpcion: String?, canOpcion: String?) {
+        productos.add(ProductoPedido(nomOpcion, imagen, preOpcion, canOpcion))
+    }
+
     class adaptadorPedido: BaseAdapter {
-        var productos = ArrayList<Producto>()
+        var productos = ArrayList<ProductoPedido>()
         var contexto: Context?= null
 
-        constructor(contexto:Context, productos:ArrayList<Producto>) {
+        constructor(contexto:Context, productos:ArrayList<ProductoPedido>) {
             this.productos = productos
             this.contexto = contexto
         }
@@ -56,13 +72,13 @@ class PedidoActivity : AppCompatActivity() {
 
             var imagen = vista.findViewById(R.id.pedido_img) as ImageView
             var nombre = vista.findViewById(R.id.pedido_nombre) as TextView
-            var desc = vista.findViewById(R.id.pedido_desc) as TextView
+            var cantid = vista.findViewById(R.id.pedido_cantidad) as TextView
             var precio = vista.findViewById(R.id.pedido_precio) as TextView
 
             imagen.setImageResource(produ.imagen)
             nombre.setText(produ.nombre)
-            desc.setText(produ.descripcion)
             precio.setText(produ.precio)
+            cantid.setText(produ.cantidad)
 
             return vista
         }

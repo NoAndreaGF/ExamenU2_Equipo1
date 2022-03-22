@@ -83,7 +83,6 @@ class CategoriasActivity : AppCompatActivity() {
             nombre.setText(categ.nombre)
             desc.setText(categ.descripcion)
 
-            // Este hace qu se vaya a al categoria view
             imagen.setOnClickListener{
                 val intent: Intent = Intent(contexto, ProductosActivity::class.java)
                 intent.putExtra("menuType", contexto?.getString(nom))
