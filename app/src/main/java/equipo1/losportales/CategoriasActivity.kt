@@ -35,15 +35,15 @@ class CategoriasActivity : AppCompatActivity() {
     }
 
     fun agregarCategorias() {
-        categorias.add(CategoriaMenu(R.string.tacos,R.drawable.tacoscategoria,R.string.vacio))
-        categorias.add(CategoriaMenu(R.string.antojitos,R.drawable.antojitoscategoria,R.string.vacio))
-        categorias.add(CategoriaMenu(R.string.especialidades,R.drawable.especialidadescategoria,R.string.vacio))
-        categorias.add(CategoriaMenu(R.string.caldos,R.drawable.caldoscategoria,R.string.vacio))
-        categorias.add(CategoriaMenu(R.string.combinations,R.drawable.combinadoscategoria,R.string.vacio))
+        categorias.add(CategoriaMenu(R.string.tacos,R.drawable.tacoscategoria,R.string.tacos_desc))
+        categorias.add(CategoriaMenu(R.string.antojitos,R.drawable.antojitoscategoria,R.string.antojitos_desc))
+        categorias.add(CategoriaMenu(R.string.especialidades,R.drawable.especialidadescategoria,R.string.especialidades_desc))
+        categorias.add(CategoriaMenu(R.string.caldos,R.drawable.caldoscategoria,R.string.caldos_desc))
+        categorias.add(CategoriaMenu(R.string.combinations,R.drawable.combinadoscategoria,R.string.combinations_desc))
         categorias.add(CategoriaMenu(R.string.tortas,R.drawable.tortacategoria,R.string.tortas_desc))
-        categorias.add(CategoriaMenu(R.string.sopas,R.drawable.sopascategoria,R.string.vacio))
+        categorias.add(CategoriaMenu(R.string.sopas,R.drawable.sopascategoria,R.string.sopas_desc))
         categorias.add(CategoriaMenu(R.string.sideOrders,R.drawable.extrascategoria,R.string.sideOrders_desc))
-        categorias.add(CategoriaMenu(R.string.bebidas,R.drawable.bebidascategoria,R.string.vacio))
+        categorias.add(CategoriaMenu(R.string.bebidas,R.drawable.bebidascategoria,R.string.bebidas_desc))
     }
 
     private class AdaptadorCategorias: BaseAdapter {

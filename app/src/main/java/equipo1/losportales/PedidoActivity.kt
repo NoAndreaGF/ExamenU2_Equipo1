@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.ListView
@@ -17,7 +18,9 @@ class PedidoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_pedido)
+
 
         val adapter = adaptadorPedido(this, productos)
         val listview: ListView = findViewById(R.id.list_pedidos)
