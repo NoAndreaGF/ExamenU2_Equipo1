@@ -86,42 +86,7 @@
             android:textSize="25sp" />
     </LinearLayout>
 
-    <TextView
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Choice of Meat:"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:layout_marginLeft="20dp"
-        />
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
-
-        >
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Carne asada"
-            android:textSize="20sp"
-            />
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Frijol"
-            android:textSize="20sp"
-            />
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BTS"
-            android:textSize="20sp"
-            />
-
-    </RadioGroup>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

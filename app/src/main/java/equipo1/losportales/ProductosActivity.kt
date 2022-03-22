@@ -8,10 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 
 class ProductosActivity : AppCompatActivity() {
     var titulo: Int = 0
@@ -37,6 +34,13 @@ class ProductosActivity : AppCompatActivity() {
         var adaptador: AdaptadorProductos = AdaptadorProductos(this, menu)
 
         listview.adapter = adaptador
+
+        var buttonPedido: Button = findViewById(R.id.btn_pedido) as Button
+
+        buttonPedido.setOnClickListener{
+            var intent: Intent = Intent(this, PedidoActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun agregarProductos(opcion: String?) {

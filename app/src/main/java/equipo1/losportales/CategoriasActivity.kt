@@ -18,7 +18,6 @@ import androidx.core.content.res.TypedArrayUtils
 class CategoriasActivity : AppCompatActivity() {
 
     var categorias: ArrayList<CategoriaMenu> = ArrayList<CategoriaMenu>()
-    var nombreCategoria: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)

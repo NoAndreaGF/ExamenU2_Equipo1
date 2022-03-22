@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LosPortales">
         <activity
+            android:name=".Pedido_view"
+            android:exported="false" />
+        <activity
+            android:name=".PedidoActivity"
+            android:exported="false" />
+        <activity
             android:name=".Categoria_view"
             android:exported="false" />
         <activity
@@ -34,5 +40,5 @@
             </intent-filter>
         </activity>
     </application>
-    
+
 </manifest>

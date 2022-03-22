@@ -61,6 +61,13 @@ class producto_view : AppCompatActivity() {
                 producto_total.setText(total.toString())
             }
         }
+
+        val btn_agregar: Button = findViewById(R.id.producto_agregar)
+        btn_agregar.setOnClickListener{
+
+        }
+
+
     }
 }
 
