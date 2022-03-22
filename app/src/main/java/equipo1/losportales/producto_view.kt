@@ -74,11 +74,15 @@ class producto_view : AppCompatActivity() {
         val btn_agregar: Button = findViewById(R.id.producto_agregar)
 
         btn_agregar.setOnClickListener{
+
+            cantidadInt = producto_cantidad.text.toString().toInt()
+            total = producto_total.text.toString().toFloat()
+
             var intent: Intent = Intent(this, PedidoActivity::class.java)
             intent.putExtra("nombre", nomOpcion)
-            intent.putExtra("precio", total)
+            intent.putExtra("precio", total.toString())
             intent.putExtra("imagen", imagen)
-            intent.putExtra("cantidad", cantidadInt)
+            intent.putExtra("cantidad", cantidadInt.toString())
 
             startActivity(intent)
         }

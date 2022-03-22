@@ -67,7 +67,7 @@
                 android:fontFamily="sans-serif"
                 android:text="@string/tacoT_desc"
                 android:textColor="@color/verde1"
-                android:textSize="12sp" />
+                android:textSize="20sp" />
 
         </RelativeLayout>
 
